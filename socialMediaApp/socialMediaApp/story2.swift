@@ -45,6 +45,7 @@ struct story2: View {
                                 hearts += 1
                                 
                             }else{
+                                
                                 heart = "🤍"
                             }
                         })

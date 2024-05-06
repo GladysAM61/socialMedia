@@ -16,6 +16,9 @@
 		33DAE29C2BDAA60000340367 /* beginning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAE29B2BDAA60000340367 /* beginning.swift */; };
 		33DAE29E2BDAB1A400340367 /* createAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAE29D2BDAB1A400340367 /* createAcc.swift */; };
 		33DEE8E32BDFF6B7008E764A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8E22BDFF6B7008E764A /* Home.swift */; };
+		33E2CD482BE3E763008B3DF0 /* post2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2CD472BE3E763008B3DF0 /* post2.swift */; };
+		33E2CD4A2BE3E800008B3DF0 /* post1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2CD492BE3E800008B3DF0 /* post1.swift */; };
+		33E6E40A2BE552F6006B57FD /* tabPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6E4092BE552F6006B57FD /* tabPage.swift */; };
 		33FD80D32BD6CE2D00AC7CE5 /* socialMediaAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD80D22BD6CE2D00AC7CE5 /* socialMediaAppApp.swift */; };
 		33FD80D52BD6CE2D00AC7CE5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FD80D42BD6CE2D00AC7CE5 /* ContentView.swift */; };
 		33FD80D72BD6CE2F00AC7CE5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33FD80D62BD6CE2F00AC7CE5 /* Assets.xcassets */; };
@@ -32,6 +35,9 @@
 		33DAE29B2BDAA60000340367 /* beginning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beginning.swift; sourceTree = "<group>"; };
 		33DAE29D2BDAB1A400340367 /* createAcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAcc.swift; sourceTree = "<group>"; };
 		33DEE8E22BDFF6B7008E764A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		33E2CD472BE3E763008B3DF0 /* post2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = post2.swift; sourceTree = "<group>"; };
+		33E2CD492BE3E800008B3DF0 /* post1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = post1.swift; sourceTree = "<group>"; };
+		33E6E4092BE552F6006B57FD /* tabPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabPage.swift; sourceTree = "<group>"; };
 		33FD80CF2BD6CE2D00AC7CE5 /* socialMediaApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = socialMediaApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33FD80D22BD6CE2D00AC7CE5 /* socialMediaAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = socialMediaAppApp.swift; sourceTree = "<group>"; };
 		33FD80D42BD6CE2D00AC7CE5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,8 +79,11 @@
 				33DAE29B2BDAA60000340367 /* beginning.swift */,
 				33DAE29D2BDAB1A400340367 /* createAcc.swift */,
 				33FD80D42BD6CE2D00AC7CE5 /* ContentView.swift */,
+				33E6E4092BE552F6006B57FD /* tabPage.swift */,
 				33DEE8E22BDFF6B7008E764A /* Home.swift */,
 				3338E6972BD825570052ABED /* post.swift */,
+				33E2CD492BE3E800008B3DF0 /* post1.swift */,
+				33E2CD472BE3E763008B3DF0 /* post2.swift */,
 				33C6A9BD2BDBFFF000468BF5 /* account.swift */,
 				33C6A9BF2BDBFFFF00468BF5 /* message.swift */,
 				33D853C52BE1558E00170A03 /* texting.swift */,
@@ -168,12 +177,15 @@
 				33DAE29C2BDAA60000340367 /* beginning.swift in Sources */,
 				33DEE8E32BDFF6B7008E764A /* Home.swift in Sources */,
 				3338E6982BD825570052ABED /* post.swift in Sources */,
+				33E2CD4A2BE3E800008B3DF0 /* post1.swift in Sources */,
 				33FD80D52BD6CE2D00AC7CE5 /* ContentView.swift in Sources */,
 				33CBD4E62BD8098000E7AFDA /* story2.swift in Sources */,
 				33D853C62BE1558E00170A03 /* texting.swift in Sources */,
 				33C6A9C02BDBFFFF00468BF5 /* message.swift in Sources */,
 				33C6A9BE2BDBFFF000468BF5 /* account.swift in Sources */,
 				33FD80D32BD6CE2D00AC7CE5 /* socialMediaAppApp.swift in Sources */,
+				33E2CD482BE3E763008B3DF0 /* post2.swift in Sources */,
+				33E6E40A2BE552F6006B57FD /* tabPage.swift in Sources */,
 				33DAE29E2BDAB1A400340367 /* createAcc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
