@@ -14,8 +14,13 @@ struct post2: View {
     @Binding var publicaciones: [posts]
     @Binding var personas: [people]
     @State var IsLoaded : Bool = false
+    @Binding var tabSelection: Int
+//    @Binding var multipleAccounts: [user]
+    @Binding var profilePic : String
     
+    @Binding var loggedIn : [user]
     
+   
     
     var body: some View {
         NavigationView{
@@ -34,27 +39,15 @@ struct post2: View {
                             Text("Post")
                         })
                              .foregroundStyle(Color.black)
-                        
-                        //                making a navigation link that will take you to the home page
-                        NavigationLink(destination:ContentView().navigationBarBackButtonHidden(true),isActive: $IsLoaded){
-//                              emptyview makes nothing appear basically like an empty and invisable link
-                            EmptyView()
-                        }
                     }
                     
                     Text("Story:")
                     HStack{
-                        TextField("Amount of hours..",text: $hrs)
-                        Button(action: {addPost()}, label: {
-                            Text("Post")
+                        TextField("Type the number of hours",text: $hrs)
+                        Button(action: {addStory()}, label: {
+                            Text("Story")
                         })
                              .foregroundStyle(Color.black)
-                        
-                        //                making a navigation link that will take you to the home page
-                        NavigationLink(destination:ContentView().navigationBarBackButtonHidden(true),isActive: $IsLoaded){
-//                              emptyview makes nothing appear basically like an empty and invisable link
-                            EmptyView()
-                        }
                     }
                 }
             }
@@ -62,21 +55,25 @@ struct post2: View {
     }
 //    function to append or add the stories to the home page
     func addPost(){
-        var newPost: posts = posts(username: "", likes: (0), caption: captionNew, picturesss: imagee)
+        var newPost: posts = posts(username: loggedIn[0].usernamee , likes: (0), caption: captionNew, picturesss: imagee)
         publicaciones.append(newPost)
+        tabSelection = 1
         IsLoaded = true
     }
     
 //    functon to append the story
     func addStory(){
-        var newStory: people = people(pfp: "", userName: "", newPic: imagee)
+        print(personas.count)
+        var newStory: people = people(pfp: loggedIn[0].profileImage, userName: loggedIn[0].usernamee, newPic: imagee)
         personas.append(newStory)
+        print(personas)
+        tabSelection = 2
         IsLoaded = true
+        
     }
     
 }
 
 #Preview {
-    post2(imagee: "2",publicaciones:.constant([]),personas:.constant([])
-    )
+    post2(imagee:"2",publicaciones:.constant([]),personas:.constant([]), tabSelection:.constant(1), /*multipleAccounts: .constant([])*/profilePic: .constant("5"),loggedIn: .constant([]))
 }

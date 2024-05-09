@@ -6,47 +6,13 @@
 //
 
 import SwiftUI
-//creating a a struct were we will have a the people and their post
-struct people{
-    var pfp : String
-    var userName: String
-    var newPic: String
-}
-
-//struct for the posts
-struct posts{
-    @State var username : String
-    @State var likes : Int
-    @State var caption : String
-    @State var picturesss : String
-}
 
 
 struct Home: View {
     @State var storyFlipped: [Bool] = Array(repeating: false, count: 4)
     @State var historia: Int = 0
-    //        creating an array were imma story the images,pfp,and username used for stories
-    //        technically im not storing the images themselves but the names of the images that i will then use them in forloops
-    
-    @State var personas = [
-        people(pfp: "rauwPost", userName: "RauwRauw", newPic: "rauwStory"),
-        people(pfp: "chatoPFP", userName: "ChatoMP", newPic: "chatoStory"),
-        people(pfp: "JOP", userName: "Jesus Ortiz", newPic: "jopStory"),
-        people(pfp: "karolG", userName: "La Bichota", newPic: "karolGStory")
-    ]
-    
-    //        creating an array were imma story the pics,caption,likes,and username used for stories
-    //        technically im not storing the images themselves but the names of the images that i will then use them in forloops
-    @State var publicaciones = [
-       posts(username: "RauwRauw", likes: (54670), caption: "Yo seré muchas cosas, pero nunca infiel", picturesss: "rauwIG"),
-     posts(username: "Chivas", likes: (98456), caption: "Dale Rebaño", picturesss: "chivasIGpost"),
-       posts(username: "kevinAMF", likes: (2300), caption: "saquen las hypnotic", picturesss: "kevinAMF"),
-    posts(username: "elChino", likes: (36755), caption: "El Chino Pacasss", picturesss: "chinoPacas"),
-    posts(username: "gabito_54", likes: (93213), caption: "te mire contenta en otra parte", picturesss: "gabitoBallastero" ),
-    posts(username: "Ulta", likes: (342), caption: "Dont forget to check out this sale that you do not want to miss!", picturesss: "ultaStore"),
-    posts(username: "juniorH", likes: (1000000), caption: "La letra muda", picturesss: "JuniorH"),
-    posts(username: "CarinlLeon", likes: (156000), caption: "Pa que vean como ruje el Leon", picturesss: "Carinleon" ),
-    ]
+    @Binding var personas : [people]
+    @Binding var publicaciones : [posts]
 
     var body: some View {
         NavigationView{
@@ -90,5 +56,5 @@ struct Home: View {
 
 
 #Preview {
-    Home()
+    Home(personas: .constant([]), publicaciones: .constant([]))
 }

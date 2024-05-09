@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct post: View {
-  
+    
     @State var column : [GridItem] = [
 //   this is used to like layout the post
              GridItem(.fixed(50),spacing:35 , alignment: nil),
@@ -23,7 +23,14 @@ struct post: View {
                  "9","10","11","12",
                  "13","14","15","16"
     ]
+    @Binding var tabSelection:Int
+    @Binding var publicaciones : [posts]
+    @Binding var personas : [people]
+    @Binding var profilePic : String
+    @Binding var loggedIn : [user]
     
+    
+//
     var body: some View {
         NavigationView{
         ZStack{
@@ -42,7 +49,7 @@ struct post: View {
                         ForEach(picturesOfMiVida.indices, id:\.self){ i in
                             VStack{
                                 post1(foto: picturesOfMiVida[i])
-                                NavigationLink(destination:post2(imagee: picturesOfMiVida[i],publicaciones:.constant([]),personas:.constant([])).navigationBarBackButtonHidden(true)){
+                                NavigationLink(destination:post2(imagee: picturesOfMiVida[i],publicaciones:$publicaciones,personas:$personas,tabSelection:$tabSelection,profilePic:$profilePic,loggedIn: $loggedIn).navigationBarBackButtonHidden(true)/*tabSelection:$tabSelection*/){
                                     //                              emptyview makes nothing appear basically like an empty and invisable link
                                     Text(picturesOfMiVida[i])
                                         .foregroundColor(.black)
@@ -58,5 +65,5 @@ struct post: View {
 }
 
 #Preview {
-    post()
+    post(tabSelection:.constant(1), publicaciones: .constant([]), personas: .constant([]), profilePic: .constant(""), loggedIn: .constant([]))
 }

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct socialMediaAppApp: App {
+   
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(profilePic: .constant(""), username1: .constant(""),loggedIn: .constant([]))
         }
     }
 }

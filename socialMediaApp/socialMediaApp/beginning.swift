@@ -20,17 +20,29 @@ struct user{
     var usernamee: String
     var age : String
     var password : String
+    var profileImage : String
+    var bio: String
 }
 
 
 
 struct beginning: View {
-//    creating a
-    @State var multipleAccounts: [user] = []
+////    creating a variable to keep the user logged in
+//    @State var loggedIn: [user] = []
+////    adding accounts to it 
+//    @State var multipleAccounts = [
+//    user(fName: "Ximena", lName: "Araiza", usernamee: "Xime", age: "17", password: "Ximena", profileImage: "pfp5", bio: "🎀"),
+//    user(fName: "Jon", lName: "Monsivais", usernamee: "Jon_dmd", age: "17", password: "Jon", profileImage: "pfp2", bio: "🐵")
+//    ]
     @State var username1: String = ""
     @State var pswrd : String = ""
 //    a bool that will determine if the password and username are the same
     @State var isLoaded : Bool = false
+    
+    @Binding var profilePic : String
+    @Binding var loggedIn : [user]
+    @Binding var multipleAccounts : [user]
+    
     var body: some View {
         
         NavigationView{
@@ -77,21 +89,21 @@ struct beginning: View {
                             
                             
                             //                making a navigation link that will take you to the next page or the home page
-                            NavigationLink(destination:ContentView().navigationBarBackButtonHidden(true),isActive: $isLoaded){
+                            NavigationLink(destination:ContentView(profilePic: $profilePic, username1: $username1,loggedIn: $loggedIn).navigationBarBackButtonHidden(true),isActive: $isLoaded){
 //                              emptyview makes nothing appear basically like an empty and invisable link
                                 EmptyView()
                             }
                             
                             Spacer()
                                 .frame(width: 30)
-                            NavigationLink(destination:createAcc().navigationBarBackButtonHidden(true), label: {
-                                Text("Create Account")
-                                    .font(.system(size:25))
-                                    .frame(width:120, height:80)
-                                    .background(Color.pink.opacity(0.25))
-                                    .cornerRadius(9)
-                                    .foregroundColor(.black)
-                            })
+//                        NavigationLink(destination:createAcc(multipleAccounts: $multipleAccounts, loggedIn:$loggedIn).navigationBarBackButtonHidden(true), label: {
+//                                Text("Create Account")
+//                                    .font(.system(size:25))
+//                                    .frame(width:120, height:80)
+//                                    .background(Color.pink.opacity(0.25))
+//                                    .cornerRadius(9)
+//                                    .foregroundColor(.black)
+//                            })
                         }
                     }
                 }
@@ -99,24 +111,23 @@ struct beginning: View {
             }
         }
         func revisar(){
+            print(multipleAccounts.count)
         if !username1.isEmpty && !pswrd.isEmpty{
             for i in multipleAccounts.indices{
+                print(multipleAccounts[i].usernamee)
                 if multipleAccounts[i].usernamee == username1 && multipleAccounts[i].password == pswrd{
+                    
+                    loggedIn.append(multipleAccounts[i])
+                    print("correct")
                     isLoaded = true
                 }
             }
             }
+            
         }
-//        
-//            function to check if the password or user is not found
-//        func check(){
-//            if !username1.isEmpty && !pswrd.isEmpty{
-//                    isLoaded = false
-//            }
-//        }
     }
 
 
 #Preview {
-    beginning(multipleAccounts: [user(fName: "", lName: "", usernamee: "", age: "", password: "")])
+    beginning( profilePic: .constant(""), loggedIn: .constant([]), multipleAccounts: .constant([]))
 }

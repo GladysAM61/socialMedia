@@ -8,12 +8,17 @@
 import SwiftUI
 
 struct createAcc: View {
-    @State private var loggedIn: [user] = []
     @State var firstName : String = ""
     @State var LastName : String = ""
     @State var edad : String = ""
     @State var usernameee : String = ""
     @State var passwordddd : String = ""
+    @State var bio1 : String = ""
+    @State var profilePic : String = ""
+    @State var images : [String] = ["pfp2","pfp3","pfp4","acc","pfp5"]
+    @State var isLoaded : Bool = false
+    @Binding var multipleAccounts: [user]
+    @Binding var loggedIn : [user]
     
     var body: some View {
         
@@ -55,7 +60,25 @@ struct createAcc: View {
                                 .padding()
                         }
                         HStack{
-                            Button("Create Account", action: {
+                            Text("Bio:")
+                            TextEditor(text: $bio1)
+                                .frame(height:30)
+                                .cornerRadius(5)
+                        }
+                        HStack{
+                            Text("Profile Picture: ")
+                            VStack{
+                               ScrollView{
+                                    ForEach(images.indices, id: \.self) {i in
+                                        selectingPFP(imageSelected: images[i],profilePic: $profilePic)
+                                    }
+                                }
+                            }
+                        }
+                        
+                        HStack{
+                            Text(profilePic)
+                          Button("Create Account", action: {
                                 addData()
                             })
                              .font(.system(size:25))
@@ -63,15 +86,25 @@ struct createAcc: View {
                              .background(Color.pink.opacity(0.25))
                              .cornerRadius(9)
                              .foregroundColor(.black)
-                            NavigationLink(destination:beginning(multipleAccounts: [user(fName: firstName, lName: LastName, usernamee: usernameee, age: edad, password: passwordddd)]).navigationBarBackButtonHidden(true), label: {
-                                Text("Back to login")
-                                    .font(.system(size:25))
-                                    .frame(width:100, height:80)
-                                    .background(Color.pink.opacity(0.25))
-                                    .cornerRadius(9)
-                                    .foregroundColor(.black)
-                                
-                            })
+                            
+                            NavigationLink(destination:ContentView(profilePic:.constant(""), username1: .constant(""), loggedIn: $loggedIn).navigationBarBackButtonHidden(true),isActive: $isLoaded){
+//                              emptyview makes nothing appear basically like an empty and invisable link
+                                EmptyView()
+                            }
+                            
+                            
+                            
+                            
+                            
+//                            NavigationLink(destination:beginning(multipleAccounts: [user(fName: firstName, lName: LastName, usernamee: usernameee, age: edad, password: passwordddd)], profilePic: $profilePic).navigationBarBackButtonHidden(true), label: {
+//                                Text("Back to login")
+//                                    .font(.system(size:25))
+//                                    .frame(width:100, height:80)
+//                                    .background(Color.pink.opacity(0.25))
+//                                    .cornerRadius(9)
+//                                    .foregroundColor(.black)
+//                                
+//                            })
                         }
                     }
                 }
@@ -79,12 +112,13 @@ struct createAcc: View {
         }
     }
     func addData(){
-        let user : user=user(fName: firstName, lName: LastName, usernamee: usernameee, age: edad, password: passwordddd)
+        let user : user=user(fName: firstName, lName: LastName, usernamee: usernameee, age: edad, password: passwordddd, profileImage: profilePic,bio: bio1)
+        multipleAccounts.append(user)
         loggedIn.append(user)
-      
+      isLoaded = true
     }
 }
 
 #Preview {
-    createAcc()
+    createAcc(multipleAccounts: .constant([]), loggedIn: .constant([]))
 }

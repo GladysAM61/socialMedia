@@ -9,12 +9,16 @@ import SwiftUI
 
 
 struct ContentView: View {
+    @Binding var profilePic: String
+    @Binding var username1: String
+    
+    @Binding var loggedIn : [user]
+    
     var body: some View {
-        
-       tabPage()
+        tabPage(profilePic:$profilePic, username1: $username1, loggedIn: $loggedIn) 
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(profilePic: .constant("acc"),username1: .constant("gladys"), loggedIn: .constant([]))
 }
