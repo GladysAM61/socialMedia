@@ -27,13 +27,6 @@ struct user{
 
 
 struct beginning: View {
-////    creating a variable to keep the user logged in
-//    @State var loggedIn: [user] = []
-////    adding accounts to it 
-//    @State var multipleAccounts = [
-//    user(fName: "Ximena", lName: "Araiza", usernamee: "Xime", age: "17", password: "Ximena", profileImage: "pfp5", bio: "🎀"),
-//    user(fName: "Jon", lName: "Monsivais", usernamee: "Jon_dmd", age: "17", password: "Jon", profileImage: "pfp2", bio: "🐵")
-//    ]
     @State var username1: String = ""
     @State var pswrd : String = ""
 //    a bool that will determine if the password and username are the same

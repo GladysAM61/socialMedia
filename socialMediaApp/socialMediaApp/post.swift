@@ -49,7 +49,7 @@ struct post: View {
                         ForEach(picturesOfMiVida.indices, id:\.self){ i in
                             VStack{
                                 post1(foto: picturesOfMiVida[i])
-                                NavigationLink(destination:post2(imagee: picturesOfMiVida[i],publicaciones:$publicaciones,personas:$personas,tabSelection:$tabSelection,profilePic:$profilePic,loggedIn: $loggedIn).navigationBarBackButtonHidden(true)/*tabSelection:$tabSelection*/){
+                                NavigationLink(destination:post2(imagee: picturesOfMiVida[i],publicaciones:$publicaciones,personas:$personas,tabSelection:$tabSelection,profilePic:$profilePic,loggedIn: $loggedIn).navigationBarBackButtonHidden(false)/*tabSelection:$tabSelection*/){
                                     //                              emptyview makes nothing appear basically like an empty and invisable link
                                     Text(picturesOfMiVida[i])
                                         .foregroundColor(.black)

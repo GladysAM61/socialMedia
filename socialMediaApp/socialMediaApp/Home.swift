@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct Home: View {
-    @State var storyFlipped: [Bool] = Array(repeating: false, count: 4)
+    @State var storyFlipped: [Bool] = Array(repeating: false, count: 10)
     @State var historia: Int = 0
     @Binding var personas : [people]
     @Binding var publicaciones : [posts]

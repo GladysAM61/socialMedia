@@ -90,7 +90,7 @@ struct tabPage: View {
                     }
                     .tag(3)
                 //                takes you to the account page where you can text
-                account(profilePic: $profilePic, username1:$username1, loggedIn: $loggedIn)
+                account(profilePic: $profilePic, username1:$username1, loggedIn: $loggedIn,publicaciones: $publicaciones,personas:$personas)
                     .tabItem {
                         Image(systemName: "2.square.fill")
                             .foregroundStyle(Color.pink, Color.pink)
