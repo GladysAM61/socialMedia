@@ -25,6 +25,7 @@ struct message: View {
          mensaje(pfp: "EugenioDerbez", user: "Eugenio_Derbez", texts:["Heyyy","Oye are you actually the voice actor of Donkey from Shrek?", "Yes! I also appear in plenty other movies too", "Oh yea my favorite one is probably instruction not included", "Thats a fan favorite!"]),
          mensaje(pfp: "badBunny", user: "elConejoMalo", texts:["Estamos bien","sobran los billetes de 100", "No hay nada mal, estamos bien, está todo bien", "El dinero me llueve", "En la cuenta un par de ceros","Y empezamos desde cero","Hoy me levanté contento","hoy me levanté feliz"]),
          mensaje(pfp: "ivanCornejo", user: "IvanCornejo16", texts:["Heyyy i was wondering if you were a fan of my music?","Hi Ivan yea i love youre music", "Ok well in that case i was wondering if you wanted to be in our music video?", "OMG YES I WOULD LOVE TOO!", "Ok then thats good to hear ill text you with more info"]),
+         mensaje(pfp: "rauwIG", user: "ElZorro", texts: ["Holaaa", "Holaa", "Lista para el tour de Playa Saturno?👀", "Obvio que siii","Ok puess"])
     ]
     
     var body: some View {
@@ -49,6 +50,7 @@ struct message: View {
                         NavigationLink(destination: texting(profilePic: textMessages[i].pfp, nombreDeUser: textMessages[i].user, conversations: textMessages[i].texts), label: {
                             HStack{
                                 Text(textMessages[i].texts[4])
+                                Image(systemName: "arrow.right")
                             }
                                 .frame(width: 300,height:40)
                                 .foregroundColor(.black)

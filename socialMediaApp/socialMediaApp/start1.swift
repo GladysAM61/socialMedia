@@ -34,16 +34,29 @@ struct start1: View {
                     Spacer()
                         .frame(height:70)
                     HStack{
+//                        if you clic already have an account, that means that your account is in the multiple accounts array
                         Text("Already have an account?")
+//                        binding or passing over the logged in and multiple accounts array
                         NavigationLink(destination: beginning(profilePic: .constant(""),loggedIn: $loggedIn, multipleAccounts: $multipleAccounts).navigationBarBackButtonHidden(true), label: {
                             Text("click here")
+                                .font(.system(size:14))
+                               .foregroundColor(.black)
+                               .frame(width:80,height: 30)
+                               .background(Color.white)
+                               .cornerRadius(80)
                         })
                     }
                     
                     HStack{
                         Text("Don't have an account?")
+                        //                        binding or passing over the logged in and multiple accounts array
                         NavigationLink(destination: createAcc(multipleAccounts: $multipleAccounts, loggedIn: $loggedIn).navigationBarBackButtonHidden(true), label: {
                             Text("click here")
+                                .font(.system(size:14))
+                                .foregroundColor(.black)
+                                .frame(width:80,height: 30)
+                                .background(Color.white)
+                                .cornerRadius(80)
                         })
                     }
                 }

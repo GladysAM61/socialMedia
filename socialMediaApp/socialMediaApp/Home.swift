@@ -9,7 +9,7 @@ import SwiftUI
 
 
 struct Home: View {
-    @State var storyFlipped: [Bool] = Array(repeating: false, count: 10)
+    @State var storyFlipped: [Bool] = Array(repeating: false, count: 20)
     @State var historia: Int = 0
     @Binding var personas : [people]
     @Binding var publicaciones : [posts]
@@ -23,6 +23,7 @@ struct Home: View {
                     ScrollView(.horizontal){
                         HStack{
 //                            for each like person in the array make the story view appear
+                            
                             ForEach(personas.indices, id:\.self){ index in
                                 Button(action: {flip(index: index)}, label: {
                                     story(image: personas[index].pfp, user: personas[index].userName, newStory: personas[index].newPic, isFlipped: storyFlipped[index])

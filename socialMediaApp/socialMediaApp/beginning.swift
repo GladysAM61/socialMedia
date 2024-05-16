@@ -9,11 +9,6 @@ import SwiftUI
 
 //creating a struct so i can store what the user set as their password and username
 
-struct loggin{
-    var password: String
-    var username: String
-}
-
 struct user{
     var fName: String
     var lName: String
@@ -89,29 +84,25 @@ struct beginning: View {
                             
                             Spacer()
                                 .frame(width: 30)
-//                        NavigationLink(destination:createAcc(multipleAccounts: $multipleAccounts, loggedIn:$loggedIn).navigationBarBackButtonHidden(true), label: {
-//                                Text("Create Account")
-//                                    .font(.system(size:25))
-//                                    .frame(width:120, height:80)
-//                                    .background(Color.pink.opacity(0.25))
-//                                    .cornerRadius(9)
-//                                    .foregroundColor(.black)
-//                            })
                         }
                     }
                 }
                 
             }
         }
+//    function to see if the password and the username match
         func revisar(){
-            print(multipleAccounts.count)
+//            if the username and pasword text fields ARE NOT empty, then run the code
         if !username1.isEmpty && !pswrd.isEmpty{
+//            going through one array in multiple accounts
             for i in multipleAccounts.indices{
-                print(multipleAccounts[i].usernamee)
+//                if the username from the array matches the username entered in the textfield and the password from the array matches the password entered in the textfield when they click the enter button, then change the bool to true
+                
+//                if its true, its gonna take you to the home page
+//                we also append the account entered to the loggedIn var because that is the user that is logged in
                 if multipleAccounts[i].usernamee == username1 && multipleAccounts[i].password == pswrd{
                     
                     loggedIn.append(multipleAccounts[i])
-                    print("correct")
                     isLoaded = true
                 }
             }

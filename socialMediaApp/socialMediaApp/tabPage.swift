@@ -75,7 +75,7 @@ struct tabPage: View {
                 //                takes you to the post page which lets you upload images
                 post(tabSelection:$tabSelection, publicaciones: $publicaciones, personas: $personas, profilePic:$profilePic, loggedIn:$loggedIn)
                     .tabItem {
-                        Image(systemName: "2.square.fill")
+                        Image(systemName: "camera")
                             .foregroundStyle(Color.pink, Color.pink)
                         Text("Post")
                     }
@@ -84,7 +84,7 @@ struct tabPage: View {
                 //                takes you to the message page where you can text
                 message()
                     .tabItem {
-                        Image(systemName: "2.square.fill")
+                        Image(systemName: "bubble.left.and.bubble.right.fill")
                             .foregroundStyle(Color.pink, Color.pink)
                         Text("Message")
                     }
@@ -92,8 +92,8 @@ struct tabPage: View {
                 //                takes you to the account page where you can text
                 account(profilePic: $profilePic, username1:$username1, loggedIn: $loggedIn,publicaciones: $publicaciones,personas:$personas)
                     .tabItem {
-                        Image(systemName: "2.square.fill")
-                            .foregroundStyle(Color.pink, Color.pink)
+                        Image(systemName: "person.fill")
+                            .foregroundStyle(Color.pink, Color.black)
                         Text("Account")
                     }
                     .tag(4)

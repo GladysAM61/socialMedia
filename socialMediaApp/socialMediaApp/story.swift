@@ -13,38 +13,41 @@ struct story: View {
     var user: String
     var newStory: String
     var isFlipped: Bool
+
+    
+    
+    
     
     var body: some View {
       
-        
-    VStack{
-        ZStack{
-//if is flipped is true then like change it to the new story
-//            it always starts on false
-            if isFlipped == true{
-                VStack{
-                    Image(newStory)
+      
+            VStack{
+                ZStack{
+                    Image("babyPink")
                         .resizable()
-                        .cornerRadius(100)
-                        .frame(width:150, height:170)
-                    Text(user)
-                }
-                
-            }else{
-                VStack{
-                    Image(image)
-                        .resizable()
-                        .cornerRadius(100)
-                        .frame(width:150, height:170)
-                    Spacer()
-                        .frame(height:30)
-                    Text(user)
+                    //if is flipped is true then like change it to the new story
+                    //           it always starts on false
+                    if isFlipped == true{
+                        VStack{
+                            Image(newStory)
+                                .resizable()
+                                .cornerRadius(100)
+                                .frame(width:150, height:170)
+                            Text(user)
+                        }
                         
+                    }else{
+                        VStack{
+                            Image(image)
+                                .resizable()
+                                .cornerRadius(100)
+                                .frame(width:150, height:170)
+                            Text(user)
+                            
+                        }
+                    }
                 }
-            }
-          }
-
-//        
+//
 //        Text(user)
         }
         

@@ -33,7 +33,8 @@ struct texting: View {
                             }
                             
                             Text(conversations[i])
-                                .frame(width:300,height:30)
+                                .frame(width:300,height:60)
+                                .multilineTextAlignment(.leading)
                                 .background(Color.white)
                             
                             if i % 2 == 0{
@@ -62,5 +63,5 @@ struct texting: View {
     }
 
 #Preview {
-    texting(profilePic: "rauwIG", nombreDeUser: "ElZorro", conversations: ["Holaaa", "Holaa", "Lista para el tour de Playa Saturno?👀", "Obvio que siii","Ok puess"])
+    texting(profilePic: "rauwIG", nombreDeUser: "ElZorro", conversations: ["Holaaa", "Holaa", "Lista para el tour de Playa Saturno?👀", "Obvio que siii............12344567988777788","Ok puess"])
 }

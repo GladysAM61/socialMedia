@@ -63,10 +63,8 @@ struct post2: View {
     
 //    functon to append the story
     func addStory(){
-        print(personas.count)
         var newStory: people = people(pfp: loggedIn[0].profileImage, userName: loggedIn[0].usernamee, newPic: imagee)
         personas.append(newStory)
-        print(personas)
         tabSelection = 2
         IsLoaded = true
         

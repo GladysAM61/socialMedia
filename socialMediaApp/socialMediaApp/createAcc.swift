@@ -31,6 +31,7 @@ struct createAcc: View {
                     VStack{
                         HStack{
                             Text("First Name: ")
+//                            storing what the user typed in the textfield into the
                             TextField("Type here...",text: $firstName)
                                 .textFieldStyle(RoundedBorderTextFieldStyle())
                                 .padding()
@@ -77,7 +78,6 @@ struct createAcc: View {
                         }
                         
                         HStack{
-                            Text(profilePic)
                           Button("Create Account", action: {
                                 addData()
                             })
@@ -96,15 +96,6 @@ struct createAcc: View {
                             
                             
                             
-//                            NavigationLink(destination:beginning(multipleAccounts: [user(fName: firstName, lName: LastName, usernamee: usernameee, age: edad, password: passwordddd)], profilePic: $profilePic).navigationBarBackButtonHidden(true), label: {
-//                                Text("Back to login")
-//                                    .font(.system(size:25))
-//                                    .frame(width:100, height:80)
-//                                    .background(Color.pink.opacity(0.25))
-//                                    .cornerRadius(9)
-//                                    .foregroundColor(.black)
-//                                
-//                            })
                         }
                     }
                 }

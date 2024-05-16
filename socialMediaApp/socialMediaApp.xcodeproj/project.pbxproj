@@ -14,11 +14,13 @@
 		33C8584E2BE93F7A00863E58 /* AccInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C8584D2BE93F7A00863E58 /* AccInfo.swift */; };
 		33CBD4E42BD806A000E7AFDA /* story.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CBD4E32BD806A000E7AFDA /* story.swift */; };
 		33CBD4E62BD8098000E7AFDA /* story2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CBD4E52BD8098000E7AFDA /* story2.swift */; };
+		33D4DCDE2BF3CDD400B0A28E /* profileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D4DCDD2BF3CDD400B0A28E /* profileView.swift */; };
 		33D853C62BE1558E00170A03 /* texting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33D853C52BE1558E00170A03 /* texting.swift */; };
 		33DAE29C2BDAA60000340367 /* beginning.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAE29B2BDAA60000340367 /* beginning.swift */; };
 		33DAE29E2BDAB1A400340367 /* createAcc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DAE29D2BDAB1A400340367 /* createAcc.swift */; };
 		33DEE8E32BDFF6B7008E764A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DEE8E22BDFF6B7008E764A /* Home.swift */; };
 		33E160492BED341E00F70628 /* start1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E160482BED341E00F70628 /* start1.swift */; };
+		33E16DC72BF50BF20062B06F /* Following.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E16DC62BF50BF20062B06F /* Following.swift */; };
 		33E2CD482BE3E763008B3DF0 /* post2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2CD472BE3E763008B3DF0 /* post2.swift */; };
 		33E2CD4A2BE3E800008B3DF0 /* post1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E2CD492BE3E800008B3DF0 /* post1.swift */; };
 		33E6E40A2BE552F6006B57FD /* tabPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33E6E4092BE552F6006B57FD /* tabPage.swift */; };
@@ -36,11 +38,13 @@
 		33C8584D2BE93F7A00863E58 /* AccInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccInfo.swift; sourceTree = "<group>"; };
 		33CBD4E32BD806A000E7AFDA /* story.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story.swift; sourceTree = "<group>"; };
 		33CBD4E52BD8098000E7AFDA /* story2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = story2.swift; sourceTree = "<group>"; };
+		33D4DCDD2BF3CDD400B0A28E /* profileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = profileView.swift; sourceTree = "<group>"; };
 		33D853C52BE1558E00170A03 /* texting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = texting.swift; sourceTree = "<group>"; };
 		33DAE29B2BDAA60000340367 /* beginning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = beginning.swift; sourceTree = "<group>"; };
 		33DAE29D2BDAB1A400340367 /* createAcc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAcc.swift; sourceTree = "<group>"; };
 		33DEE8E22BDFF6B7008E764A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		33E160482BED341E00F70628 /* start1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = start1.swift; sourceTree = "<group>"; };
+		33E16DC62BF50BF20062B06F /* Following.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Following.swift; sourceTree = "<group>"; };
 		33E2CD472BE3E763008B3DF0 /* post2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = post2.swift; sourceTree = "<group>"; };
 		33E2CD492BE3E800008B3DF0 /* post1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = post1.swift; sourceTree = "<group>"; };
 		33E6E4092BE552F6006B57FD /* tabPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabPage.swift; sourceTree = "<group>"; };
@@ -84,8 +88,8 @@
 				33FD80D22BD6CE2D00AC7CE5 /* socialMediaAppApp.swift */,
 				33DAE29B2BDAA60000340367 /* beginning.swift */,
 				33E160482BED341E00F70628 /* start1.swift */,
-				33DAE29D2BDAB1A400340367 /* createAcc.swift */,
 				33C2C7D72BEBCBC900E5FC49 /* selectingPFP.swift */,
+				33DAE29D2BDAB1A400340367 /* createAcc.swift */,
 				33FD80D42BD6CE2D00AC7CE5 /* ContentView.swift */,
 				33E6E4092BE552F6006B57FD /* tabPage.swift */,
 				33DEE8E22BDFF6B7008E764A /* Home.swift */,
@@ -94,6 +98,8 @@
 				33E2CD472BE3E763008B3DF0 /* post2.swift */,
 				33C6A9BD2BDBFFF000468BF5 /* account.swift */,
 				33C8584D2BE93F7A00863E58 /* AccInfo.swift */,
+				33E16DC62BF50BF20062B06F /* Following.swift */,
+				33D4DCDD2BF3CDD400B0A28E /* profileView.swift */,
 				33C6A9BF2BDBFFFF00468BF5 /* message.swift */,
 				33D853C52BE1558E00170A03 /* texting.swift */,
 				33CBD4E32BD806A000E7AFDA /* story.swift */,
@@ -189,7 +195,9 @@
 				33DEE8E32BDFF6B7008E764A /* Home.swift in Sources */,
 				3338E6982BD825570052ABED /* post.swift in Sources */,
 				33C8584E2BE93F7A00863E58 /* AccInfo.swift in Sources */,
+				33E16DC72BF50BF20062B06F /* Following.swift in Sources */,
 				33E2CD4A2BE3E800008B3DF0 /* post1.swift in Sources */,
+				33D4DCDE2BF3CDD400B0A28E /* profileView.swift in Sources */,
 				33FD80D52BD6CE2D00AC7CE5 /* ContentView.swift in Sources */,
 				33CBD4E62BD8098000E7AFDA /* story2.swift in Sources */,
 				33D853C62BE1558E00170A03 /* texting.swift in Sources */,

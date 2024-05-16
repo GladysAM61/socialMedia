@@ -15,6 +15,7 @@ struct account: View {
     @Binding var publicaciones: [posts]
     @Binding var personas : [people]
     
+    
     var body: some View {
         NavigationView{
             ZStack{
@@ -37,31 +38,36 @@ struct account: View {
                                     .font(.system(size: 20))
                             }
                     }
-                    ForEach(personas.indices){i in
-                        if personas[i].userName == loggedIn[0].usernamee{
-                            HStack{
-                                ScrollView(.horizontal){
-                                    story(image: personas[i].pfp, user: personas[i].userName, newStory: personas[i].newPic,isFlipped: true)
-                                        .frame(width:100,height:100)
+                   
+                ScrollView(.horizontal){
+                    HStack(spacing:60){
+                        ForEach(personas.indices, id: \.self){i in
+                           if personas[i].userName == loggedIn[0].usernamee{
+                                    story(image: personas[i].pfp, user: personas[i].userName, newStory: personas[i].newPic, isFlipped: true)
+                                        .frame(width:100,height:160)
                                 }
                             }
                         }
-                    }
+                }.frame(width:.infinity,height: 250)
                     
-                    ForEach(publicaciones.indices){i in
+               Spacer()
+                        .frame(height:5)
+                    
+                    
+            ScrollView(.horizontal){
+                HStack{
+                    ForEach(publicaciones.indices, id: \.self){i in
                         if publicaciones[i].username == loggedIn[0].usernamee{
-                            HStack{
-                                ScrollView(.horizontal){
                                     story2(userName: publicaciones[i].username, hearts: publicaciones[i].likes, theCaption: publicaciones[i].caption,foto: publicaciones[i].picturesss)
 //                                        .resizable()
-                                        .frame(width:100,height:100)
+                                        .frame(width:100,height:160)
                                 }
                             }
                         }
-                    }
+            }.frame(width:.infinity,height: 250)
                     
                     
-                    NavigationLink(destination: AccInfo(), label: {
+                    NavigationLink(destination: AccInfo(loggedIn: $loggedIn, publicaciones: $publicaciones, personas:$personas), label: {
                         Text("More Account Information")
                     })
                     .foregroundColor(.black)
