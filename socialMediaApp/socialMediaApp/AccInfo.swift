@@ -63,6 +63,7 @@ struct AccInfo: View {
                     }
                     HStack{
                         Text("Following: ")
+//                        when they click on following they will see all the people they follow and then they could see people profiles when they click on them
                         NavigationLink(destination: Following().navigationBarBackButtonHidden(true), label: {
                             Text("15")
                         })
@@ -75,9 +76,11 @@ struct AccInfo: View {
                     
                     HStack{
                         Text("Change Bio:")
+//                        making them store their new bio in newBio
                         TextField("Type here...",text: $newBio)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
+//                        runs the changeBio function which basically replaces the old bio variable with the new bio variable
                         Button(action: changeBio, label: {
                             Text("new bio")
                         })
@@ -91,9 +94,11 @@ struct AccInfo: View {
                     
                     HStack{
                         Text("Change Username:")
+                        //                        making them store their new username in newUsername
                         TextField("Type here...",text: $newUserName)
                             .textFieldStyle(RoundedBorderTextFieldStyle())
                             .padding()
+                        //                        runs the changeUsername function which basically replaces the old username variable with the new username variable
                         Button(action: changeUserName, label: {
                             Text("new username")
                         })
@@ -104,23 +109,6 @@ struct AccInfo: View {
                            .foregroundColor(.black)
                     }
                     
-                    
-                    
-                    
-                    
-                    
-                    //      logs you out by clicking a button that amptys the logged in array and
-//                    HStack{
-//                        Button(action: emptyLoggin, label: {
-//                            Text("Log Out")
-//                        })
-//                              .font(.system(size:20))
-//                             .foregroundColor(.black)
-//                             .frame(width:170,height: 50)
-//                             .background(Color.white)
-//                             .cornerRadius(80)
-////                        
-//                    }
                 }
             }
           }
@@ -138,32 +126,6 @@ struct AccInfo: View {
             loggedIn[0].usernamee = ""
             loggedIn[0].usernamee = newUserName
          }
-    
-        
-        //    function to make the logged in empty so you could log out
-        func emptyLoggin(){
-            print("loggingout")
-//            tabSelection = 1
-            isLoaded = true
-            
-        }
-//function to update the following thing
-    func follow(){
-        ForEach(publicaciones.indices, id:\.self){i in
-            if publicaciones[i].username == loggedIn[0].usernamee{
-//                followers + 1
-            }
-            else{
-//                followers + 1
-            }
-        }
-        
-        ForEach(personas.indices, id:\.self){ i in
-            if personas[i].userName == loggedIn[0].usernamee{
-//                                yourSelf + 1
-            }
-        }
-    }
     
 }
 

@@ -34,7 +34,9 @@ struct post2: View {
                         .frame(width:220 ,height: 220)
                     Text("Post:")
                     HStack{
+//                       whatever the user types will be the caption and then it will stored into the caption into posts
                         TextField("Type your caption here..",text: $captionNew)
+//                        when they click the button it will take them into the home page and append the post to the publicaciones array
                         Button(action: {addPost()}, label: {
                             Text("Post")
                         })
@@ -44,6 +46,7 @@ struct post2: View {
                     Text("Story:")
                     HStack{
                         TextField("Type the number of hours",text: $hrs)
+                        //                        when they click the button it will take them into the posting page and append the post to the story array
                         Button(action: {addStory()}, label: {
                             Text("Story")
                         })
@@ -55,6 +58,8 @@ struct post2: View {
     }
 //    function to append or add the stories to the home page
     func addPost(){
+//        creating a new variable using a post struct
+//        using this to append it to the publicaciones array so it will pop up with the post in the home page
         var newPost: posts = posts(username: loggedIn[0].usernamee , likes: (0), caption: captionNew, picturesss: imagee)
         publicaciones.append(newPost)
         tabSelection = 1
@@ -63,6 +68,8 @@ struct post2: View {
     
 //    functon to append the story
     func addStory(){
+        //        creating a new variable using a story,people, struct
+        //        using this to append it to the personas array so it will pop up with the story in the home page
         var newStory: people = people(pfp: loggedIn[0].profileImage, userName: loggedIn[0].usernamee, newPic: imagee)
         personas.append(newStory)
         tabSelection = 2

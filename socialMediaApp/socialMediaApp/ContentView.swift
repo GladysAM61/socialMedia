@@ -14,6 +14,7 @@ struct ContentView: View {
     
     @Binding var loggedIn : [user]
     
+//    binding all these variables to the tab page
     var body: some View {
         tabPage(profilePic:$profilePic, username1: $username1, loggedIn: $loggedIn) 
     }

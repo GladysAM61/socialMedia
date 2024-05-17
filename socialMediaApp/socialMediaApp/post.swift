@@ -46,9 +46,12 @@ struct post: View {
                 }
                 ScrollView{
                     LazyVGrid(columns: column){
+//                        foreach loop to go through the array and make the images pop up
                         ForEach(picturesOfMiVida.indices, id:\.self){ i in
                             VStack{
+//                                making the picture pop up by the content view of post1
                                 post1(foto: picturesOfMiVida[i])
+//                                taking them to the other page where they coud post the images as a story or post
                                 NavigationLink(destination:post2(imagee: picturesOfMiVida[i],publicaciones:$publicaciones,personas:$personas,tabSelection:$tabSelection,profilePic:$profilePic,loggedIn: $loggedIn).navigationBarBackButtonHidden(false)/*tabSelection:$tabSelection*/){
                                     //                              emptyview makes nothing appear basically like an empty and invisable link
                                     Text(picturesOfMiVida[i])

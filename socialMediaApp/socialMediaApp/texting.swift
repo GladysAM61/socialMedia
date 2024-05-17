@@ -18,6 +18,7 @@ struct texting: View {
                 .resizable()
             VStack{
                 HStack{
+//                    displays the users profile picture as well as their username
                     Image(profilePic)
                         .resizable() 
                         .frame(width:80,height:80)
@@ -26,6 +27,7 @@ struct texting: View {
                         .font(.system(size:30))
                 }
                 VStack{
+//                    for each conversation,conversations is an array of strings so basically for each string, make it have a frame and if its a even number make it be on the left, if it even make it be on the right
                     ForEach(conversations.indices,id: \.self){ i in
                         HStack(){
                             if i % 2 == 1{

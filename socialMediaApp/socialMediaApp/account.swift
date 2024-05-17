@@ -22,6 +22,7 @@ struct account: View {
                 Image("babyPink")
                     .resizable()
                 VStack{
+//                    for each loop to go through through the logged in array and i use it to display the users profile picture,their username, and their bio
                         ForEach(loggedIn.indices){i in
                             HStack{
                                 Image(loggedIn[0].profileImage)
@@ -41,7 +42,9 @@ struct account: View {
                    
                 ScrollView(.horizontal){
                     HStack(spacing:60){
+//                        for loop to display their stories
                         ForEach(personas.indices, id: \.self){i in
+//                            going through the stories array and if the username from the story matches the users username that means its their post so they could display it
                            if personas[i].userName == loggedIn[0].usernamee{
                                     story(image: personas[i].pfp, user: personas[i].userName, newStory: personas[i].newPic, isFlipped: true)
                                         .frame(width:100,height:160)
@@ -57,6 +60,7 @@ struct account: View {
             ScrollView(.horizontal){
                 HStack{
                     ForEach(publicaciones.indices, id: \.self){i in
+                        //                            going through the posts array and if the username from the posts matches the users username that means its their post so they could display it
                         if publicaciones[i].username == loggedIn[0].usernamee{
                                     story2(userName: publicaciones[i].username, hearts: publicaciones[i].likes, theCaption: publicaciones[i].caption,foto: publicaciones[i].picturesss)
 //                                        .resizable()
@@ -65,7 +69,7 @@ struct account: View {
                             }
                         }
             }.frame(width:.infinity,height: 250)
-                    
+//                    taking them to the other page
                     
                     NavigationLink(destination: AccInfo(loggedIn: $loggedIn, publicaciones: $publicaciones, personas:$personas), label: {
                         Text("More Account Information")

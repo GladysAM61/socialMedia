@@ -46,7 +46,7 @@ struct message: View {
                         }
                         //                    making them a navigation link where they could text
                         //                    textmessages i is like the first one of the array
-//                        the arroe will not be hidden so they could go back
+//                        the arrow will not be hidden so they could go back
                         NavigationLink(destination: texting(profilePic: textMessages[i].pfp, nombreDeUser: textMessages[i].user, conversations: textMessages[i].texts), label: {
                             HStack{
                                 Text(textMessages[i].texts[4])

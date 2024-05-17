@@ -19,7 +19,7 @@ struct profile3{
 
 
 struct Following: View {
-
+//variable for people profiles
     @State var profiless = [
         profile3(pictureProfile: "karolG", elUsername: "LaBichota", elBio: "Nunca te cambian por algo mejor",picture1: "karolGStory", picture2: "",seguidores: 500),
        profile3(pictureProfile: "ivanCornejo" , elUsername: "Ivannn    " , elBio :  "te deseo lo mejor, aunque no sea conmigo" , picture1 : "ivan1", picture2 : "ivan2" , seguidores : 150000),
@@ -44,14 +44,16 @@ struct Following: View {
                     Image("babyPink")
                         .resizable()
                     ScrollView(.vertical){
+//                        foreach loop to go through each profile
                     ForEach(profiless.indices, id:\.self){ i in
                         VStack{
                             HStack{
+//                                displaying their profile picture
                                 Image(profiless[i].pictureProfile)
                                     .resizable()
                                     .frame(width:60, height: 60)
                                     .cornerRadius(100)
-                                
+//                                making their username a navigation link into the next oage where they could see the persons profile
                                 NavigationLink(destination: profileView(fotoDePerfil: profiless[i].pictureProfile, nombreDeUsario: profiless[i].elUsername,elBio3: profiless[i].elBio, folowers: profiless[i].seguidores, fotoUno: profiless[i].picture1, fotoDos: profiless[i].picture2).navigationBarBackButtonHidden(true), label: {
                                     Text(profiless[i].elUsername)
                                 })

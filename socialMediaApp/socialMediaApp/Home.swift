@@ -9,6 +9,8 @@ import SwiftUI
 
 
 struct Home: View {
+//    an array where all the stories are not flipped
+//    when they are clicked, then the index of the story cicked will change to true
     @State var storyFlipped: [Bool] = Array(repeating: false, count: 20)
     @State var historia: Int = 0
     @Binding var personas : [people]
@@ -26,6 +28,11 @@ struct Home: View {
                             
                             ForEach(personas.indices, id:\.self){ index in
                                 Button(action: {flip(index: index)}, label: {
+//                                    the image is the pfp
+//                                    the user is the userName
+//                                    the newStory is the newPic
+//                                    changing the flipped index to true
+//                                    basically passing over all these variables but to the story
                                     story(image: personas[index].pfp, user: personas[index].userName, newStory: personas[index].newPic, isFlipped: storyFlipped[index])
                                 })
                                 .foregroundColor(.black)
@@ -51,6 +58,8 @@ struct Home: View {
 //    this function will help reveal like the story 
     func flip(index:Int){
         historia = index
+//        changing the index of storyFlipped to true
+//        this will make the new story appear
         storyFlipped[historia] = true
     }
 }

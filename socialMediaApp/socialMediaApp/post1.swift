@@ -12,6 +12,7 @@ struct post1: View {
     var body: some View {
             VStack{
                 HStack{
+//                    making the image so it'll just be like a content view
                     Image(foto)
                         .resizable()
                         .frame(width: 110, height: 140 )

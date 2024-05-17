@@ -14,17 +14,12 @@ struct story: View {
     var newStory: String
     var isFlipped: Bool
 
-    
-    
-    
+
     
     var body: some View {
       
       
             VStack{
-                ZStack{
-                    Image("babyPink")
-                        .resizable()
                     //if is flipped is true then like change it to the new story
                     //           it always starts on false
                     if isFlipped == true{
@@ -47,9 +42,7 @@ struct story: View {
                         }
                     }
                 }
-//
-//        Text(user)
-        }
+
         
     }
 }

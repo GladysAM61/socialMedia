@@ -25,19 +25,24 @@ struct profileView: View {
                 .resizable()
             VStack{
                 HStack{
+//                    image thats the persons pfp
                         Image(fotoDePerfil)
                                 .resizable()
                                 .cornerRadius(100)
                                 .frame(width:120, height:130)
                         Spacer()
                                .frame(width:50)
+//                    their username will be next to the pfp since its on a hstack
                         Text(nombreDeUsario)                                            .font(.system(size: 30))
                     }
+//                displaying their bio
                        Text(elBio3)
                     HStack{
+//                        showing their followers
                          Text("Followers:")
                          Text("\(folowers)")
                      }
+//                shows their posts
                    Image(fotoUno)
                         .resizable()
                         .frame(width: 150, height: 150)
